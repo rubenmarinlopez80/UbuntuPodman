@@ -11,13 +11,13 @@ the PHP-FPM and Nginx Services."
 ARG DEBIAN_FRONTEND=noninteractive
 
 # Update Ubuntu Software repository
-RUN apt update
-RUN apt-get -qq -y install wget
+#RUN apt update
+#RUN apt-get -qq -y install wget
 
 # 	
 RUN /bin/bash -c 'echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04/ /"' | tee "/etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list"
 #
-RUN /bin/bash -c 'wget -nv https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04/ -O Release.key' |  apt-key add -
+#RUN /bin/bash -c 'wget -nv https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04/ -O Release.key' |  apt-key add -
 #
 RUN apt-get update -qq
 
