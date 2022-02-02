@@ -14,10 +14,9 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt update
 
 # 	
-RUN /bin/bash -c 'echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04/ /" | tee /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list"
+RUN /bin/bash -c 'echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04/ /" | tee /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list"'
 #
-RUN curl -L "https://download.opensuse.org/repositories/devel:/kubic:\
-/libcontainers:/stable/xUbuntu_20.04/Release.key" | sudo apt-key add -
+RUN curl -L "https://download.opensuse.org/repositories/devel:/kubic:\ /libcontainers:/stable/xUbuntu_20.04/Release.key" |  apt-key add -
 
 #
 
