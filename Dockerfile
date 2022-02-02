@@ -14,16 +14,15 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt update
 
 # 	
-echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04/ /" | sudo tee /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list
-
+RUN /bin/bash -c 'echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04/ /" | tee /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list"
 #
-curl -L "https://download.opensuse.org/repositories/devel:/kubic:\
+RUN curl -L "https://download.opensuse.org/repositories/devel:/kubic:\
 /libcontainers:/stable/xUbuntu_20.04/Release.key" | sudo apt-key add -
 
 #
 
-sudo apt-get update -qq
+RUN apt-get update -qq
 
-sudo apt-get -qq -y upgrade
+RUN apt-get -qq -y upgrade
 
-sudo apt-get -qq -y install podman
+RUN apt-get -qq -y install podman
