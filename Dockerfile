@@ -23,4 +23,4 @@ RUN /bin/bash -c 'echo "deb https://download.opensuse.org/repositories/devel:/ku
 
 RUN apt-get -qq -y upgrade
 
-RUN apt-get -qq -y install podman
+#RUN apt-get -qq -y install podman
