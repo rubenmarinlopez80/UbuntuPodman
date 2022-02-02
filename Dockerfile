@@ -12,8 +12,8 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 # Update Ubuntu Software repository
 #RUN  apt-get update \
-  && apt-get install -y wget \
-  && rm -rf /var/lib/apt/lists/*
+#  && apt-get install -y wget \
+#  && rm -rf /var/lib/apt/lists/*
 
 # 	
 RUN /bin/bash -c 'echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04/ /"' | tee "/etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list"
