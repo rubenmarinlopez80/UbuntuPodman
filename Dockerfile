@@ -10,17 +10,14 @@ the PHP-FPM and Nginx Services."
 # Disable Prompt During Packages Installation
 ARG DEBIAN_FRONTEND=noninteractive
 
+ENV HOME /root
 # Update Ubuntu Software repository
-#RUN  apt-get update \
-#  && apt-get install -y wget \
-#  && rm -rf /var/lib/apt/lists/*
-
+RUN apt-get update \ && apt-get install -y wget \ && rm -rf /var/lib/apt/lists/*
 # 	
-#RUN /bin/bash -c 'echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04/ /"' | tee "/etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list"
+RUN /bin/bash -c 'echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04/ /"' | tee "/etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list"
 #
-#RUN /bin/bash -c 'wget -nv https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04/ -O Release.key' |  apt-key add -
+RUN /bin/bash -c 'wget -nv https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04/ -O Release.key' |  apt-key add -
 
+RUN apt-get -qq -y upgrade
 
-#RUN apt-get -qq -y upgrade
-
-#RUN apt-get -qq -y install podman
+RUN apt-get -qq -y install podman
