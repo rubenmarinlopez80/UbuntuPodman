@@ -17,7 +17,7 @@ RUN apt-get install -y curl gnupg2
 # 	
 RUN /bin/bash -c 'echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04/ /"' | tee "/etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list"
 #
-RUN /bin/bash -c 'curl -L "https://download.opensuse.org/repositories/devel:/kubic:\ /libcontainers:/stable/xUbuntu_20.04/Release.key"'
+RUN /bin/bash -c 'curl -k -L "https://download.opensuse.org/repositories/devel:/kubic:\ /libcontainers:/stable/xUbuntu_20.04/Release.key"'
 
 RUN apt-key add -
 
