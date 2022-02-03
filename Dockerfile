@@ -13,11 +13,11 @@ ARG DEBIAN_FRONTEND=noninteractive
 ENV HOME /root
 # Update Ubuntu Software repository
 RUN apt-get update 
-RUN apt-get install -y wget 
+RUN apt-get install -y curl
 # 	
 RUN /bin/bash -c 'echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04/ /"' | tee "/etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list"
 #
-RUN /bin/bash -c 'wget -nv https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04/ -O Release.key' |  apt-key add -
+RUN /bin/bash -c 'curl -L "https://download.opensuse.org/repositories/devel:/kubic:\ /libcontainers:/stable/xUbuntu_20.04/Release.key"' | apt-key add -
 
 RUN apt-get -qq -y upgrade
 
