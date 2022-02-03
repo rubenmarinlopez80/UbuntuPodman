@@ -23,4 +23,6 @@ RUN apt-key add - < Release.key
 
 RUN apt-get -qq -y upgrade
 
+RUN apt-get update 
+
 RUN apt-get -qq -y install podman
