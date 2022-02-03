@@ -13,13 +13,13 @@ ARG DEBIAN_FRONTEND=noninteractive
 ENV HOME /root
 # Update Ubuntu Software repository
 RUN apt-get update 
-RUN apt-get install -y curl gnupg2
+RUN apt-get install -y curl wget gnupg2
 # 	
 RUN /bin/bash -c 'echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04/ /"' | tee "/etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list"
 #
-RUN /bin/bash -c 'curl -k -L "https://download.opensuse.org/repositories/devel:/kubic:\ /libcontainers:/stable/xUbuntu_20.04/Release.key"'
+RUN /bin/bash -c 'wget -nv "https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_21.04/Release.key" -O Release.key'
 
-RUN apt-key add -
+RUN apt-key add - < Release.key
 
 RUN apt-get -qq -y upgrade
 
