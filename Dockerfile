@@ -26,3 +26,5 @@ RUN apt-get -qq -y upgrade
 RUN apt-get update 
 
 RUN apt-get -qq -y install podman
+
+CMD sleep 3650d
