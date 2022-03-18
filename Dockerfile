@@ -27,4 +27,5 @@ RUN apt-get update
 
 RUN apt-get -qq -y install podman
 
-CMD sleep 3650d
+#Comentamos esta linea para generar un crash en el pod
+#CMD sleep 3650d
